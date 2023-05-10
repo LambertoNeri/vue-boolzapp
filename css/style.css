@@ -1,0 +1,147 @@
+/*  general settings*/
+body{
+    height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        #009688 20%,
+        #D8DBD6 20%
+    );
+    padding-top: 3vh;
+}
+
+.font_1{
+    font-size: 1rem;
+}
+
+.font_2{
+    font-size: 0.9rem;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+
+
+/* mainpage */
+.boolzapp-mainpage{
+    width: 1250px;
+    height: 94vh;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 33% 66%;
+}
+
+.contact-menu{
+    height: 100%;
+    background-color: #F1F1F1; 
+}
+
+header{
+    display: flex;
+    background-color: #EAEAEA;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.contact-menu header .avatar-menu{
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.contact-menu header .avatar-menu img{
+    width: 60px;
+    height: auto;
+    border-radius: 100%;
+}
+
+.contact-menu span{
+    font-weight: 600;
+    
+}
+
+.symbols{
+    display: flex;
+    gap: 0.8rem;
+    margin-right: 0.8rem;
+}
+
+.notifications{
+    height: 90px;
+    background-color: #8EDAFC;
+    display: flex;
+    align-items: center;
+}
+
+.bell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border-radius: 100%;
+    margin-left: 1.5rem;
+}
+
+.fa-bell-slash{
+    font-size: 1.5rem;
+}
+
+.notifications-text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+}
+
+.input-group{
+    width: 97% !important ;
+}
+
+
+
+.chat{
+   background-color: #F1F1F1;
+   background-image: url(../img/mine.jpg);
+}
+
+/* contact container */
+
+.contacts-container{
+    overflow-y: scroll;
+    max-height: 645px;
+
+}
+
+/*contacts*/
+
+
+.contact{
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    height: 90px;
+    background-color: white;
+    align-items: center;
+}
+
+.contact-avatar{
+    width: 60px;
+    height: auto;
+    border-radius: 100%;
+}
+  
+.contact-avatar img{
+    width: 60px;
+    height: auto;
+    border-radius: 100%;
+}
+
+.contact-name{
+    display: flex;
+    flex-direction: column;
+}
+
+.last-login{
+    align-self: start;
+}
