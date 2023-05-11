@@ -146,3 +146,32 @@ header .avatar-menu img{
 .last-login{
     align-self: start;
 }
+             
+.chat{               /*chat section  */
+    position: relative;
+}
+
+.chat .input{
+    height: 80px;
+    background-color: #F3EEEA;
+    position: absolute;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 3rem;
+}
+
+.input input{
+    width: 80%;
+    border: 0;
+    height: 40px;
+    padding-inline: 1rem;
+}
+
+.input .fa-microphone, .fa-face-smile{
+    font-size: 1.3rem;
+}
