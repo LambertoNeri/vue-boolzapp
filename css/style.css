@@ -50,7 +50,7 @@ header{
     margin-top: 0.5rem;
 }
 
-.contact-menu header .avatar-menu img{
+header .avatar-menu img{
     width: 60px;
     height: auto;
     border-radius: 100%;
@@ -110,7 +110,7 @@ header{
 
 .contacts-container{
     overflow-y: scroll;
-    max-height: 645px;
+    max-height: 600px;
 
 }
 
@@ -123,6 +123,7 @@ header{
     height: 90px;
     background-color: white;
     align-items: center;
+    border-bottom: 2px solid #F1F1F1 ;
 }
 
 .contact-avatar{
