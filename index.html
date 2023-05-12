@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<div class="app container light">
+	<div class="app container light" v-cloak>
 		<div class="content">
 
 			<div class="side">
@@ -32,7 +32,7 @@
 						</div>
 					</div>
 					<ul class="contact-list">
-						<li v-for="(contact, i) in contacts" class="contact" @click="clicked(i)">
+						<li v-for="(contact, i) in filteredContacts" class="contact" @click="clicked(contact)">
 							<img class="avatar" :src="contact.avatar" :alt="contact.name">
 							<div class="info">
 								<div class="name">{{ contact.name }}</div>
@@ -60,10 +60,18 @@
 				</div>
 
 				<div class="messages">
-					<div v-for="message in contacts[activeIndex].messages"
+					<div v-for="message, i in contacts[activeIndex].messages"
                     :class="{received: message.status == 'sent', sent: message.status =='received'}" class="message">
-						<div class="text">{{message.message}}</div>
-						<div class="date">{{message.date}}</div>
+						<div  class="text">{{message.message}}</div>
+                        <div class="date">{{message.date}}</div>
+                        <span class="arrow" @click="displayBlockNone(), activeMessage = i">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+
+                        <ul class="info-text" :class="dispBlock === true ? 'd-block' : ''" v-if="activeMessage === i">
+                            <li>Info</li>
+                            <li @click="deleteMessage(i)">Cancella messaggio</li>
+                        </ul>
 					</div>
 				</div>
 

@@ -173,18 +173,20 @@ const app = Vue.createApp({
             typedMessage: '',
             DateTime: luxon.DateTime,
             searchVar: '',
+			dispBlock: false,
+			activeMessage: 0,
             
 		};
 	},
 	methods: {
-		/*filterContacts() {
+		filterContacts() {
 			const filteredArray = [];
 			// const filteredArray = .filter()
 			return filteredArray;
-		}, */
+		}, 
 
-        clicked(index) {
-            this.activeIndex = index
+        clicked(element) {
+            this.activeIndex = this.contacts.indexOf(element)
         },
 
         pushing() {
@@ -220,7 +222,20 @@ const app = Vue.createApp({
                     status: 'received',
                 })
             }, 3000);
-        },    
+        },
+		
+		displayBlockNone(){
+			if (this.dispBlock === true) {
+				this.dispBlock = false
+			} else {
+				this.dispBlock = true
+			}
+		},
+
+		deleteMessage(index){
+			this.contacts[this.activeIndex].messages.splice(index, 1);
+			this.dispBlock = false;
+		},
 
 
             
@@ -230,7 +245,8 @@ const app = Vue.createApp({
 	},
 	computed: {
 		filteredContacts() {
-			const filteredArray = [this.contacts.name.includes(this.searchVar)];
+			/*let lowerSearch = this.searchVar.toUpperCase(); */
+			const filteredArray = this.contacts.filter(contact => contact.name.includes(this.searchVar));
 			return filteredArray;
         },
 

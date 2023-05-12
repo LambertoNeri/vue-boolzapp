@@ -249,7 +249,13 @@ html {
 .main .messages .text {
 	padding: 1.2em;
 	padding-bottom: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+	
 }
+
+
 
 .main .messages .sent {
 	align-self: flex-start;
@@ -268,6 +274,46 @@ html {
 	font-size: .7rem;
 }
 
+.arrow{
+	display: none;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.message{
+	position: relative;
+}
+
+.message:hover .arrow{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.info-text{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    background-color: white;
+    box-shadow: 1px 1px 5px black;
+    list-style: none;
+    padding: 10px;
+    z-index: 5;
+}
+
+.info-text li{
+    cursor: pointer;
+}
+
+.d-block{
+    display: block;
+}
+
 
 
 /* add new message section */
@@ -279,4 +325,7 @@ html {
 	background-color: var(--bg-general);
 	border: 1px solid #ddd;
 	border-radius: 5px;
+	position: relative;
+
 }
+
