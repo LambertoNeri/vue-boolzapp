@@ -1,0 +1,282 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: sans-serif;
+}
+
+.light {
+	--color-primary: #009688;
+	--color-secondary: #D9DBD5;
+	--bg-heading: #EAEAEA;
+	--bg-notifications: #8EDAFC;
+	--bg-general: #FFFFFF;
+	--bg-sent: #FFFFFF;
+	--bg-received: #D5F9BA;
+	--url-bg-chat: url('img/mine.jpg');
+	--color-text-primary: #000000;
+	--color-text-secondary: #6B7376;
+	--color-text-ternary: #B6B9BB;
+	--color-buttons: #B1B1B1;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-image: linear-gradient(
+		to bottom,
+		var(--color-primary) 15%,
+		var(--color-secondary) 15%
+	);
+}
+
+.btn {
+	padding: .4em;
+	color: var(--color-buttons);
+	font-size: 1.5rem;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.content {
+	display: flex;
+	height: 85%;
+	width: 95%;
+	max-width: 950px;
+}
+
+.side {
+	display: flex;
+	flex-direction: column;
+	width: 35%;
+	height: 100%;
+	border-inline-end: 1px solid #888;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	width: 65%;
+	height: 100%;
+}
+
+.side .user {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	height: 4rem;
+	background-color: var(--bg-heading);
+}
+
+.side .notifications {
+	flex: 0 0 4rem;
+	background-color: var(--bg-notifications);
+}
+
+.side .contacts {
+	flex: 1 0 0;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--bg-general);
+}
+
+.main .contact {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	height: 4rem;
+	background-color: var(--bg-heading);
+}
+
+.main .messages {
+	flex: 1 0 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 2rem 3rem;
+	overflow-y: scroll;
+	background-image: var(--url-bg-chat);
+}
+
+.main .add-message {
+	flex: 0 0 4rem;
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+	background-color: var(--bg-heading);
+}
+
+
+
+/* user section */
+
+.side .user .avatar {
+	padding: .5em;
+	height: 100%;
+	border-radius: 9em;
+}
+
+.side .user .name {
+	flex-grow: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+
+/* messages section */
+
+
+
+/* contacts list section */
+
+.side .contacts .search {
+	flex: 0 0 auto;
+	padding: .5rem;
+	background-color: #FAFAFA;
+}
+
+.side .contacts .input-group {
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+	padding: .5rem;
+	background-color: var(--bg-general);
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.side .contacts .input-group:focus-within {
+	outline: auto;
+}
+
+.side .contacts .icon {
+	color: var(--color-buttons);
+}
+
+.side .contacts .input-search {
+	flex: 1 0 0;
+	min-width: 0;
+	background-color: var(--bg-general);;
+	border: none;
+}
+
+.side .contacts .input-search:focus {
+	outline: none;
+}
+
+.side .contacts .contact-list {
+	flex: 1 0 0;
+	overflow-y: scroll;
+}
+
+.side .contacts .contact {
+	display: flex;
+	height: 5rem;
+	padding: .5rem;
+	border-top: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.side .contacts .avatar {
+	height: 100%;
+	border-radius: 9em;
+}
+
+.side .contacts .info {
+	flex-grow: 1;
+	min-width: 0;
+	padding-inline: .5rem;
+}
+
+.side .contacts .name,
+.side .contacts .last-message {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    flex-grow: 1;
+	white-space: nowrap;
+}
+
+.side .contacts .last-date,
+.side .contacts .last-message {
+	color: var(--color-text-ternary);
+	font-size: .8rem;
+}
+
+
+/* contact section */
+
+.main .contact .avatar {
+	padding: .5em;
+	height: 100%;
+	border-radius: 9em;
+}
+
+.main .contact .info {
+	flex-grow: 1;
+	min-width: 0;
+}
+
+.main .contact .name {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.main .contact .last-access {
+	font-size: .8rem;
+	color: var(--color-text-secondary);
+}
+
+
+
+/* messages section */
+
+.main .messages .message {
+	max-width: 60%;
+	border-radius: 5px;
+}
+
+.main .messages .text {
+	padding: 1.2em;
+	padding-bottom: 0;
+}
+
+.main .messages .sent {
+	align-self: flex-start;
+	background-color: var(--bg-sent);
+}
+
+.main .messages .received {
+	align-self: flex-end;
+	background-color: var(--bg-received);
+}
+
+.main .messages .date {
+	text-align: end;
+	padding: .5em;
+	color: var(--color-text-ternary);
+	font-size: .7rem;
+}
+
+
+
+/* add new message section */
+
+.main .add-message .message-text {
+	flex: 1 0 0;
+	min-width: 0;
+	padding: 1rem;
+	background-color: var(--bg-general);
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
