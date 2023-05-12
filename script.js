@@ -199,6 +199,7 @@ const app = Vue.createApp({
                 minute: 'numeric',
                 second: 'numeric',
             }));
+			let pausedActive = this.activeIndex
             /*let toPush = this.typedMessage.trim() */
             let newMessage = {
                 date: (timerDay + ' ' + timerTime),
@@ -213,7 +214,7 @@ const app = Vue.createApp({
             this.typedMessage = '';
             
             setTimeout(() => {
-                this.contacts[this.activeIndex].messages.push({
+                this.contacts[pausedActive].messages.push({
                     date: (timerDay + ' ' + timerTime),
                     message: 'Ok',
                     status: 'received',
