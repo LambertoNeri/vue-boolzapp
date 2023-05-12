@@ -249,8 +249,7 @@ html {
 .main .messages .text {
 	padding: 1.2em;
 	padding-bottom: 0;
-	overflow: hidden;
-	white-space: nowrap;
+	overflow-wrap: break-word;
 	position: relative;
 	
 }
