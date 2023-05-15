@@ -40,7 +40,7 @@
 									{{ contact.messages[contact.messages.length - 1].message }}
 								</div>
 							</div>
-							<div class="last-date">5/10/2022</div>
+							<div class="last-date">  Ultimo accesso <br> {{ onlyDay(i) }} </div>
 						</li>
 					</ul>
 				</div>
@@ -52,7 +52,7 @@
 					<img class="avatar" :src="contacts[activeIndex].avatar" alt="">
 					<div class="info">
 						<div class="name">{{ contacts[activeIndex].name }}</div>
-						<div class="last-access">Ultimo accesso oggi alle 10/01/2020 16:15:22</div>
+						<div class="last-access">Ultimo accesso {{ contacts[activeIndex].messages.slice(-1)[0].date }} </div>
 					</div>
 					<i class="fas fa-search btn"></i>
 					<i class="fas fa-paperclip btn"></i>

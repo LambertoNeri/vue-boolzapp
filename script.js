@@ -79,7 +79,7 @@ const app = Vue.createApp({
 					visible: true,
 					messages: [
 						{
-							date: '10/01/2020 15:30:55',
+							date: '24/07/2021 15:30:55',
 							message: 'Lo sai che ha aperto una nuova pizzeria?',
 							status: 'sent'
 						},
@@ -96,7 +96,7 @@ const app = Vue.createApp({
 					visible: true,
 					messages: [
 						{
-							date: '10/01/2020 15:30:55',
+							date: '21/12/2022 15:30:55',
 							message: 'Ricordati di chiamare la nonna',
 							status: 'sent'
 						},
@@ -113,7 +113,7 @@ const app = Vue.createApp({
 					visible: true,
 					messages: [
 						{
-							date: '10/01/2020 15:30:55',
+							date: '27/01/2020 15:30:55',
 							message: 'Ciao Claudia, hai novità?',
 							status: 'sent'
 						},
@@ -135,7 +135,7 @@ const app = Vue.createApp({
 					visible: true,
 					messages: [
 						{
-							date: '10/01/2020 15:30:55',
+							date: '18/01/2020 15:30:55',
 							message: 'Fai gli auguri a Martina che è il suo compleanno!',
 							status: 'sent'
 						},
@@ -152,7 +152,7 @@ const app = Vue.createApp({
 					visible: true,
 					messages: [
 						{
-							date: '10/01/2020 15:30:55',
+							date: '10/11/2020 15:30:55',
 							message: 'Ciao, andiamo a mangiare la pizza stasera?',
 							status: 'received'
 						},
@@ -175,13 +175,22 @@ const app = Vue.createApp({
             searchVar: '',
 			dispBlock: false,
 			activeMessage: 0,
+	/*		timerDay: (this.DateTime.now().toLocaleString({  
+                day: 'numeric',
+                month: 'numeric',
+                year: 'numeric',
+            })),
+			timerTime: (this.DateTime.now().toLocaleString({ 
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+            })),     */
             
-		};
+		};  
 	},
 	methods: {
 		filterContacts() {
 			const filteredArray = [];
-			// const filteredArray = .filter()
 			return filteredArray;
 		}, 
 
@@ -189,8 +198,8 @@ const app = Vue.createApp({
             this.activeIndex = this.contacts.indexOf(element)
         },
 
-        pushing() {
-            let timerDay = (this.DateTime.now().toLocaleString({
+       pushing() {
+             let timerDay = (this.DateTime.now().toLocaleString({
                 day: 'numeric',
                 month: 'numeric',
                 year: 'numeric',
@@ -200,7 +209,7 @@ const app = Vue.createApp({
                 hour: 'numeric',
                 minute: 'numeric',
                 second: 'numeric',
-            }));
+            }));  
 			let pausedActive = this.activeIndex
             /*let toPush = this.typedMessage.trim() */
             let newMessage = {
@@ -237,7 +246,14 @@ const app = Vue.createApp({
 			this.dispBlock = false;
 		},
 
-
+		onlyDay(index){
+			let slicing = this.contacts[index].messages.slice(-1)
+			let exploding = slicing[0].date.slice(0, 10)
+			return exploding
+		}, 
+		
+			
+			
             
         
 
@@ -249,6 +265,8 @@ const app = Vue.createApp({
 			const filteredArray = this.contacts.filter(contact => contact.name.includes(this.searchVar));
 			return filteredArray;
         },
+
+		
 
         
 	},

@@ -195,6 +195,7 @@ html {
 	flex-grow: 1;
 	min-width: 0;
 	padding-inline: .5rem;
+	max-width: 140px;
 }
 
 .side .contacts .name,
@@ -292,6 +293,7 @@ html {
     font-size: 1.1rem;
     cursor: pointer;
 }
+
 
 .info-text{
     display: none;
